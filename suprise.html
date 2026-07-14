@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Rakshi 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow-x:hidden;
+    background:linear-gradient(135deg,#0f0c29,#e35eef,#07d1ff);
+    min-height:100vh;
+    color:white;
+}
+
+/* BACKGROUND HEARTS */
+
+.hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.heart{
+    position:absolute;
+    color:#ff9acb;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(100vh) scale(0);
+        opacity:0;
+    }
+
+    30%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-10vh) scale(1.5);
+        opacity:0;
+    }
+
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero-content{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    padding:40px;
+    border-radius:30px;
+    width:90%;
+    max-width:850px;
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:0 0 40px rgba(0,0,0,0.3);
+}
+
+.profile{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid rgba(255,255,255,0.4);
+    box-shadow:0 0 40px rgba(255,0,128,0.7);
+    animation:floatPic 4s ease-in-out infinite;
+}
+
+@keyframes floatPic{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+.main-title{
+    margin-top:25px;
+    font-size:60px;
+    text-shadow:0 0 20px #ff0080;
+}
+
+.birthday-text{
+    margin-top:15px;
+    font-size:32px;
+    color:#ffe2f1;
+}
+
+.typing-text{
+    margin-top:20px;
+    font-size:22px;
+}
+
+.message-box{
+    margin-top:40px;
+    background:rgba(255,255,255,0.08);
+    padding:30px;
+    border-radius:25px;
+    line-height:2;
+    font-size:20px;
+}
+
+/* BUTTON */
+
+button{
+    margin-top:30px;
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:#ff4da6;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+/* POPUP */
+
+.popup{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+    max-width:600px;
+    background:white;
+    color:#333;
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+    display:none;
+    z-index:1000;
+}
+
+.popup h2{
+    color:#ff4da6;
+}
+
+.popup p{
+    line-height:2;
+    margin-top:20px;
+}
+
+/* GAMES */
+
+#gamesSection{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.game-box{
+    margin-top:50px;
+    background:rgba(255,255,255,0.08);
+    padding:40px;
+    border-radius:25px;
+}
+
+#movingBtn{
+    position:relative;
+}
+
+input{
+    margin-top:20px;
+    padding:12px;
+    width:250px;
+    border:none;
+    border-radius:10px;
+}
+
+.gift-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin-top:30px;
+}
+
+.gift{
+    font-size:70px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.gift:hover{
+    transform:scale(1.1);
+}
+
+/* HEART GAME */
+
+.fallingHeart{
+    position:fixed;
+    top:-50px;
+    font-size:45px;
+    animation:fall 5s linear forwards;
+    cursor:pointer;
+    z-index:9999;
+}
+
+@keyframes fall{
+
+    from{
+        transform:translateY(-10vh);
+    }
+
+    to{
+        transform:translateY(120vh);
+    }
+
+}
+
+/* FINAL SECTION */
+
+#finalSection{
+    display:none;
+    padding:100px 20px;
+}
+
+.final-box{
+    max-width:800px;
+    margin:auto;
+    background:rgba(255,255,255,0.08);
+    padding:50px;
+    border-radius:30px;
+}
+
+.final-text{
+    font-size:28px;
+    line-height:2;
+    margin-top:30px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    opacity:0.8;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .main-title{
+        font-size:42px;
+    }
+
+    .birthday-text{
+        font-size:24px;
+    }
+
+    .typing-text{
+        font-size:17px;
+    }
+
+    .profile{
+        width:180px;
+        height:180px;
+    }
+
+    .message-box{
+        font-size:17px;
+    }
+
+    .gift-container{
+        gap:15px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hearts"></div>
+
+<!-- MAIN SECTION -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<!-- IMAGE NAME SAME FOLDER ME HONA CHAHIYE -->
+
+<img src="IMG_20260219_124557.jpg" class="profile">
+
+<h1 class="main-title">
+My Rasmalai 💛🎀
+</h1>
+
+<h2 class="birthday-text">
+Happy Birthday Rakshi 🎀✨
+</h2>
+
+<div class="typing-text">
+You make my world softer, happier, and brighter ❤️
+</div>
+
+<div class="message-box">
+
+Honestly... ❤️
+<br><br>
+
+I never thought someone could become this special to me so naturally.
+<br><br>
+
+But then you came into my life...
+and somehow even ordinary moments started feeling beautiful ✨
+<br><br>
+
+Your smile, your energy, your little cute moments —
+everything about you has its own magic 🌸
+<br><br>
+
+And today is all about celebrating YOU 💫
+
+</div>
+
+<button onclick="openPopup()">
+One More Thing 💌
+</button>
+
+</div>
+
+</section>
+
+<!-- POPUP -->
+
+<div class="popup" id="popup">
+
+<h2>Another Message For You 💌</h2>
+
+<p>
+
+Talking to you makes my days better in ways I can't explain 🌸
+<br><br>
+
+And no matter what happens in life,
+I just hope your smile never fades ❤️
+<br><br>
+
+🎂 Happy Birthday Rakshi 🎀💕
+
+</p>
+
+<button onclick="closePopup()">
+Close ❤️
+</button>
+
+</div>
+
+<!-- GAMES -->
+
+<section id="gamesSection">
+
+<h1 style="font-size:55px;">
+🎮 Birthday Games 💖
+</h1>
+
+<!-- GAME 1 -->
+
+<div class="game-box">
+
+<h2>Game 1 - Catch Me 😭</h2>
+
+<button id="movingBtn">
+Catch Me 💖
+</button>
+
+<p id="game1Text"></p>
+
+</div>
+
+<!-- GAME 2 -->
+
+<div class="game-box" id="game2" style="display:none;">
+
+<h2>Game 2 - Secret Password 🔐</h2>
+
+<input type="text" id="passwordInput" placeholder="Enter Password">
+
+<br>
+
+<button onclick="checkPassword()">
+Submit
+</button>
+
+<p id="passwordText"></p>
+
+</div>
+
+<!-- GAME 3 -->
+
+<div class="game-box" id="game3" style="display:none;">
+
+<h2>Game 3 - Choose Gift 🎁</h2>
+
+<div class="gift-container">
+
+<div class="gift" onclick="wrongGift()">
+🎁
+</div>
+
+<div class="gift" onclick="correctGift()">
+🎀
+</div>
+
+<div class="gift" onclick="wrongGift()">
+🎁
+</div>
+
+</div>
+
+<p id="giftText"></p>
+
+</div>
+
+<!-- GAME 4 -->
+
+<div class="game-box" id="game4" style="display:none;">
+
+<h2>Game 4 - Catch Hearts ❤️</h2>
+
+<p id="score">
+Score : 0
+</p>
+
+<button onclick="startHeartGame()">
+Start Game 🎮
+</button>
+
+</div>
+
+<!-- GAME 5 -->
+
+<div class="game-box" id="game5" style="display:none;">
+
+<h2>Game 5 - Final Surprise ✨</h2>
+
+<button onclick="showFinalMessage()">
+Open Final Surprise 🎀
+</button>
+
+</div>
+
+</section>
+
+<!-- FINAL SECTION -->
+
+<section id="finalSection">
+
+<div class="final-box">
+
+<h1 style="font-size:55px;">
+✨ Final Surprise ✨
+</h1>
+
+<div class="final-text">
+
+Out of everyone in this world... 💖
+<br><br>
+
+I'm really glad I met you 🌸
+<br><br>
+
+You deserve endless happiness,
+beautiful memories,
+and millions of reasons to smile ✨
+<br><br>
+
+Thank you for existing(bhai hai tu apna)🫂🎀 
+<br><br>
+
+🎂 Happy Birthday Rakshita 🎀💕 and Love you More🫂🎀
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+Made With Endless Love For Rakshita 🫂🎀
+</footer>
+
+<script>
+
+/* POPUP */
+
+function openPopup(){
+
+    document.getElementById("popup").style.display="block";
+
+}
+
+function closePopup(){
+
+    document.getElementById("popup").style.display="none";
+
+}
+
+/* FLOATING HEARTS */
+
+const heartsContainer=document.querySelector(".hearts");
+
+function createHeart(){
+
+    const heart=document.createElement("div");
+
+    heart.classList.add("heart");
+
+    heart.innerHTML="❤";
+
+    heart.style.left=Math.random()*100+"vw";
+
+    heart.style.fontSize=Math.random()*25+15+"px";
+
+    heart.style.animationDuration=Math.random()*3+3+"s";
+
+    heartsContainer.appendChild(heart);
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },6000);
+
+}
+
+setInterval(createHeart,250);
+
+/* GAME 1 */
+
+let tries=0;
+
+const movingBtn=document.getElementById("movingBtn");
+
+movingBtn.addEventListener("mouseover",()=>{
+
+    if(tries<5){
+
+        movingBtn.style.left=
+        Math.random()*250-120+"px";
+
+        movingBtn.style.top=
+        Math.random()*120-60+"px";
+
+        tries++;
+
+    }
+
+    else{
+
+        document.getElementById("game1Text")
+        .innerHTML="Okay okay you win 😭💖";
+
+        document.getElementById("game2")
+        .style.display="block";
+
+    }
+
+});
+
+/* GAME 2 */
+
+let passTry=0;
+
+function checkPassword(){
+
+    passTry++;
+
+    if(passTry<3){
+
+        document.getElementById("passwordText")
+        .innerHTML="Wrong Password ❌";
+
+    }
+
+    else{
+
+        document.getElementById("passwordText")
+        .innerHTML=
+        "Password Accepted : chup re ni 💖";
+
+        document.getElementById("game3")
+        .style.display="block";
+
+    }
+
+}
+
+/* GAME 3 */
+
+function wrongGift(){
+
+    document.getElementById("giftText")
+    .innerHTML="Wrong Gift 😭";
+
+}
+
+function correctGift(){
+
+    document.getElementById("giftText")
+    .innerHTML=
+    "You unlocked the real surprise 💖";
+
+    document.getElementById("game4")
+    .style.display="block";
+
+}
+
+/* GAME 4 */
+
+let score=0;
+let started=false;
+
+function startHeartGame(){
+
+    if(started) return;
+
+    started=true;
+
+    const interval=setInterval(()=>{
+
+        const heart=document.createElement("div");
+
+        heart.classList.add("fallingHeart");
+
+        heart.innerHTML="💖";
+
+        heart.style.left=Math.random()*90+"vw";
+
+        document.body.appendChild(heart);
+
+        heart.onclick=function(){
+
+            score++;
+
+            document.getElementById("score")
+            .innerHTML="Score : "+score;
+
+            heart.remove();
+
+            if(score>=10){
+
+                clearInterval(interval);
+
+                document.getElementById("game5")
+                .style.display="block";
+
+            }
+
+        };
+
+        setTimeout(()=>{
+
+            heart.remove();
+
+        },5000);
+
+    },800);
+
+}
+
+/* GAME 5 */
+
+function showFinalMessage(){
+
+    document.getElementById("finalSection")
+    .style.display="block";
+
+    document.getElementById("finalSection")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+</script>
+
+</body>
+</html>
